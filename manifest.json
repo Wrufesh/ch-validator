@@ -13,7 +13,7 @@
     {
       "js": ["jquery.js", "myscript.js"],
       "matches": ["http://*/*", "https://*/*"],
-      "run_at": "document_start",
+      "run_at": "document_start"
     }
   ],
   "permissions": [
