@@ -1,16 +1,32 @@
-console.log('Hello World3');
-window.onload = function() {
-	var str = $( "form" ).serialize();
-	console.log(str);
+// Version: 1.0
+// Works for all forms with submit event except form in iframe from cross site
+$(document).ready(function() {
+	// alert("document is ready");
+	// var str = $( "form" ).serialize();
+	// console.log(str);
 	$( "form" ).on( "submit", function( event ) {
-	  event.preventDefault();
-	  console.log("Inside submit event")
-	  console.log( $( "form input[type=text]" ).serialize() );
+	    alert('just form submit happened');
+	    console.log("Inside submit event")
+	  // var str = $( "form" ).serialize();
+	    alert( $( "form input[type=text]" ).serialize() );
+	    alert( $( "form input[type=password]" ).serialize() );
+	    event.preventDefault();
 	});
-    if (window.jQuery) {  
-        // jQuery is loaded  
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
-    }};
+	$("input").on("click", function(event){
+	    // event.stopPropagation();
+	    // return false;
+		alert('we are in input on click');
+	    alert( $( "form input[type=text]" ).serialize() );
+	    alert( $( "form input[type=password]" ).serialize() );
+	});
+	$("a").on("click", function(event){
+	    // event.stopPropagation();
+	    // return false;
+		alert('we are in input on click');
+	    alert( $( "form input[type=text]" ).serialize() );
+	    alert( $( "form input[type=password]" ).serialize() );
+	    
+	    alert( $( "input[type=text]" ).serialize() );
+	    alert( $( "input[type=password]" ).serialize() );
+	})
+    });
